@@ -1,8 +1,9 @@
-const { User } = require('../Models/User.js');
+const  User  = require('../models/User');
 
 const userController = {
   // get all users
   getAllUsers(req, res) {
+    console.log(User);
     User.find({})
       .then(dbUserData => res.json(dbUserData))
       .catch(err => {

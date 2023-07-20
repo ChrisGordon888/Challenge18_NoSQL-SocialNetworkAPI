@@ -1,4 +1,5 @@
-const { Thought, User } = require('../Models/Thought');
+const Thought = require('../models/Thought');
+const User = require('../models/User');
 
 const thoughtController = {
   // Add functions for getAllThoughts, getThoughtById, createThought, updateThought, deleteThought, createReaction, deleteReaction
