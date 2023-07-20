@@ -30,9 +30,16 @@ WHEN I test API POST and DELETE routes in Insomnia
 THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
 
 ## Installation
+Installing the application requires one to clone the repoistory and follow the usage instructions!
 
 ## Usage
+- In order to run the application please navigate to the root directory and open the package.json in the terminal.
+- Install dependencies with the command NPM install
+- Next use the command NPM start to initialize the app
 
 ## Contributing
+- In order to make contributions please clone the repository into your own folder with this link here: git@github.com:ChrisGordon888/Challenge18_NoSQL-SocialNetworkAPI.git
+- Next, make changes in your code editor and open a pull request when pushing!
 
 ## License
+This application is licensed under the MIT license.

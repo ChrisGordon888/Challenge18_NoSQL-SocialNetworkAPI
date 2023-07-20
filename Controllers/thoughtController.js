@@ -2,9 +2,7 @@ const Thought = require('../models/Thought');
 const User = require('../models/User');
 
 const thoughtController = {
-  // Add functions for getAllThoughts, getThoughtById, createThought, updateThought, deleteThought, createReaction, deleteReaction
 
-  // get all Thoughts
 getAllThoughts(req, res) {
     Thought.find({})
       .then(dbThoughtData => res.json(dbThoughtData))
@@ -14,11 +12,9 @@ getAllThoughts(req, res) {
       });
   },
 
-  // get one Thought by id
   getThoughtById({ params }, res) {
     Thought.findOne({ _id: params.id })
       .then(dbThoughtData => {
-        // If no Thought is found, send 404
         if (!dbThoughtData) {
           res.status(404).json({ message: 'No thought found with this id' });
           return;
@@ -31,7 +27,6 @@ getAllThoughts(req, res) {
       });
   },
 
-  // createThought
   createThought({ body }, res) {
     Thought.create(body)
       .then(({ _id }) => {
@@ -51,7 +46,6 @@ getAllThoughts(req, res) {
       .catch(err => res.json(err));
   },
 
-  // updateThought
 updateThought({ params, body }, res) {
   Thought.findOneAndUpdate(
     { _id: params.id },
@@ -68,7 +62,6 @@ updateThought({ params, body }, res) {
   .catch(err => res.status(400).json(err));
 },
 
-// deleteThought
 deleteThought({ params }, res) {
   Thought.findOneAndDelete({ _id: params.id })
     .then(dbThoughtData => {
@@ -81,7 +74,6 @@ deleteThought({ params }, res) {
     .catch(err => res.status(400).json(err));
 },
 
-// createReaction
 createReaction({ params, body }, res) {
   Thought.findOneAndUpdate(
     { _id: params.thoughtId },
@@ -98,7 +90,6 @@ createReaction({ params, body }, res) {
   .catch(err => res.json(err));
 },
 
-// deleteReaction
 deleteReaction({ params }, res) {
   Thought.findOneAndUpdate(
     { _id: params.thoughtId },
